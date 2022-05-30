@@ -1,0 +1,29 @@
+.nav
+  @include paddingX
+  @include flex($main: space-between)
+  position: sticky
+  top: 0
+  left: 0
+  border-top: 4px solid black
+  background-color: $white-color
+  height: 96px
+
+  &__logo
+    font-size: $fm-4
+    font-weight: bold
+
+  &__list
+    @include flex($main: space-between)
+    font-size: $fm-1
+
+  &__link
+    color: $secondary-color
+    margin-left: $marg-2
+    transition: all 0.3s ease
+    cursor: pointer
+
+    &:hover
+      color: $primary-color
+
+    &.-active
+      color: $primary-color

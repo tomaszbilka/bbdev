@@ -1,0 +1,61 @@
+.contact-container
+  align-self: flex-start
+  margin-top: $marg-7
+  
+  .contact
+    margin-bottom: $marg-6
+
+    &__text
+      font-size: $fm-1
+      font-weight: bold
+
+    &__mail
+      margin: $marg-base 0
+      color: $accent-color
+
+.form
+  margin-top: $marg-7
+  font-family: Nunito
+
+  &__field
+    @include flex($direction: column, $cross: flex-start )
+    margin-bottom: $marg-4
+    position: relative
+
+  &__label
+    font-size: $fs-3
+    
+  &__input
+    padding: $marg-base $marg-2
+    font-size: $fm-1
+    border: 1px solid $secondary-color
+    border-radius: $r-s
+    width: 50%
+    outline: transparent
+    font-family: Nunito
+
+    &:focus
+      border: 1px solid $primary-color
+
+    &.-textarea
+      resize: vertical
+
+  &__button
+    border: none
+    font-size: $fm-1
+    font-weight: bold
+    cursor: pointer
+    font-family: Nunito
+    transition: all 0.3s ease
+    padding: $marg-base $marg-2 $marg-base 0
+    background-color: transparent
+
+    &:hover
+      color: $accent-color
+
+  &__error
+    color: $error-color
+    font-size: $fs-2
+    position: absolute
+    left: 0
+    bottom: -18px
