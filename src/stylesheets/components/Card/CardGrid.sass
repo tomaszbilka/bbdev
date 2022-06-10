@@ -1,0 +1,13 @@
+.card-grid
+  @include flex($main: space-between, $cross: streatch)
+  flex-wrap: wrap
+  margin-top: $marg-7
+  grid-gap: $marg-6
+
+@media (max-width: $l)
+  .card-grid
+    grid-gap: $marg-3
+
+@media (max-width: $xs)
+  .card-grid
+    @include flex($direction: column)

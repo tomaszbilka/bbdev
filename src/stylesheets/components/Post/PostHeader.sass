@@ -1,0 +1,21 @@
+.post-header
+  @include flex($main: space-between)
+  border-bottom: 1px solid $secondary-color
+  width: 100%
+  padding-bottom: $marg-6
+
+  &__image
+    flex: 2
+    max-width: 500px
+
+  &__wrap
+    @include flex($direction: column)
+    flex: 3
+
+  &__title
+    font-size: $fb-2
+
+  &__date
+    color: $secondary-color
+    font-style: italic
+    margin-top: $marg-2

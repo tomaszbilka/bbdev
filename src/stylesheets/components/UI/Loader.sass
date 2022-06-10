@@ -1,0 +1,83 @@
+.loader
+  @include flex
+  width: 50px
+  height: 50px
+  position: relative
+
+  &__line-top,
+  &__line-bottom,
+  &__line-left,
+  &__line-right
+    background-color: $primary-color
+
+  &__line-top
+    height: 5px
+    width: 100%
+    position: absolute
+    left: 0
+    top: 0
+    animation: line-top 1.3s linear infinite
+
+  &__line-bottom
+    height: 5px
+    width: 100%
+    position: absolute
+    left: 0
+    bottom: 0
+    animation: line-bottom 1.3s linear infinite
+
+  &__line-left
+    width: 5px
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    animation: line-left 1.3s linear infinite
+
+  &__line-right
+    width: 5px
+    height: 100%
+    position: absolute
+    right: 0
+    bottom: 0
+    animation: line-right 1.3s linear infinite
+
+@keyframes line-top
+  0%
+    top: 0
+  50%
+    top: 20px
+    background-color: $secondary-color
+  100%
+    top: 0
+    background-color: $primary-color
+
+@keyframes line-bottom
+  0%
+    bottom: 0
+  50%
+    bottom: 20px
+    background-color: $secondary-color
+  100%
+    bottom: 0
+    background-color: $primary-color
+
+@keyframes line-left
+  0%
+    left: 0
+  50%
+    left: 20px
+    background-color: $secondary-color
+  100%
+    left: 0
+    background-color: $primary-color
+
+@keyframes line-right
+  0%
+    right: 0
+  50%
+    right: 20px
+    background-color: $secondary-color
+  100%
+    right: 0
+    background-color: $primary-color

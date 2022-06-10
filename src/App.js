@@ -6,16 +6,16 @@ import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
 import Offer from 'pages/Offer';
 import Post from 'pages/Post';
-import Portfolio from 'pages/Portfolio';
+import Portfolio from './pages/Portfolio';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:blogId" element={<Post />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog/:sort" element={<Blog />} />
+        <Route path="/blog/posts/:slug" element={<Post />} />
+        <Route path="/portfolio/:sort" element={<Portfolio />} />
         <Route path="/offer" element={<Offer />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<NotFound />} />

@@ -1,15 +1,16 @@
 import { NavLink, Link } from 'react-router-dom';
+import logo from '../../../images/logo/logo.svg';
 
 const Navbar = () => {
   return (
     <nav className="nav">
-      <Link to="/" className="nav__logo">
-        <div>BBDEV</div>
+      <Link to="/">
+        <img src={logo} alt="bbdev's logo" className="nav__logo" />
       </Link>
       <ul className="nav__list">
         <li>
           <NavLink
-            to="/blog"
+            to="/blog/featured"
             className={(navData) =>
               navData.isActive ? 'nav__link -active' : 'nav__link'
             }
@@ -29,7 +30,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/portfolio"
+            to="/portfolio/all"
             className={(navData) =>
               navData.isActive ? 'nav__link -active' : 'nav__link'
             }

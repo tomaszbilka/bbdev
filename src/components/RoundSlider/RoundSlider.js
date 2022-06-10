@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import codeImg from 'images/code.jpg';
-import earthImg from 'images/earth.jpg';
-import binaryImg from 'images/binary-code.jpg';
+import codeImg from 'images/abstract-black.jpg';
+import earthImg from 'images/abstract-2-black.jpg';
+import binaryImg from 'images/abstract-3-black.jpg';
 
 const images = [codeImg, earthImg, binaryImg];
 

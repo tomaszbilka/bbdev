@@ -1,0 +1,63 @@
+.card
+  border-radius: 7px
+  width: 250px
+  overflow: hidden
+  margin-bottom: $marg-6
+  transition: all 0.4s easy
+  position: relative
+
+  &:hover
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px
+
+  &:hover &__image-color
+    opacity: 1
+
+  &__img-wrap
+    height: 150px
+
+  &__image
+    width: 100%
+    height: 100%
+
+  &__image-color
+    width: 100%
+    height: 100%
+    opacity: 0
+    position: absolute
+    left: 0
+    bottom: 150px
+    transition: all 0.3s ease
+
+  &__triangle
+    background-color: $secondary-color
+    width: 100%
+    height: 15px
+    clip-path: polygon(100% 0, 0 0, 100% 100%)
+
+  &__text-wrap
+    @include flex($direction: column)
+
+  &__title
+    padding: $marg-3 0 $marg-base 0
+
+  &__date
+    font-size: $fs-3
+    color: $secondary-color
+
+  &__text
+    padding: $marg-base $marg-2 $marg-2 $marg-2
+
+@media (max-width: $xs)
+  .card
+    width: 400px
+
+    &__img-wrap
+      height: 240px
+
+    &__image-color
+      bottom: 240px
+
+
+   
+
+    

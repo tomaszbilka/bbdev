@@ -1,0 +1,54 @@
+.offer-item
+  @include flex($direction: column, $main: flex-start)
+  border-radius: $r-l
+  width: 350px
+  position: relative
+  overflow: hidden
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+
+  &.-bigger
+    transform: scale(1.05)
+  
+  &__title
+    font-size: $fb-1
+    color: $primary-color
+    margin: $marg-4 0 $marg-5 0
+
+  &__description
+    @include flex($direction: column, $cross: flex-start, $main: flex-start)
+    width: 80%
+    margin-bottom: $marg-5
+    height: 200px
+
+  &__item
+    color: $primary-color
+    padding-bottom: $marg-2
+    margin-left: $marg-base
+    position: relative
+    
+    &::after
+      content: ""
+      width: 3px
+      height: 70%
+      background-color: $secondary-color
+      position: absolute
+      left: -9px
+      top: 0
+      padding-bottom: 3px
+        
+  &__price-wrap
+    @include flex
+    margin-bottom: $marg-3
+  
+  &__price
+    color: $secondary-color
+    font-weight: bold
+    font-size: $fb-2
+
+    &.-accent
+      color: $accent-color
+
+  &__currency
+    font-size: $fs-2
+    margin-left: $marg-base
+    margin-right: $marg-base

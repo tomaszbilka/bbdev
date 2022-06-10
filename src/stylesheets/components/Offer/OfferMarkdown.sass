@@ -1,0 +1,106 @@
+.markdown-offer
+  margin: $marg-5 0 0 0
+  font-size: $fs-4
+
+  h1
+    color: $secondary-color
+    font-size: $fb-4
+    margin-bottom: $marg-2
+    margin-top: $marg-4
+
+  h2
+    color: $secondary-color
+    font-size: $fb-2
+    margin-bottom: $marg-2
+    margin-top: $marg-4
+
+  h3
+    color: $secondary-color
+    font-size: $fm-5
+    margin-bottom: $marg-2
+    margin-top: $marg-4
+
+  p
+    margin-bottom: $marg-2
+    line-height: 25px
+
+  ul
+    margin-bottom: $marg-2
+
+    li
+      list-style-type: none
+      margin-left: 17px
+      line-height: 25px
+      position: relative
+
+      &::after
+        content: ""
+        position: absolute
+        left: -17px
+        top: 0px
+        width: 3px
+        height: 85%
+        background-color: $primary-color
+        margin-top: 2px
+
+  .contains-task-list li
+    list-style-type: none
+    margin-left: 0
+
+  ol
+    margin-bottom: $marg-2
+
+    li
+      list-style-type: decimal
+      margin-left: 17px
+      line-height: 25px
+
+  a
+    color: $secondary-color
+    transition: 0.3s all
+
+    &:hover
+      color: $primary-color
+
+  blockquote
+    padding: $marg-base
+    border-left: 4px solid $secondary-color
+    color: $secondary-color
+
+    p
+      margin: 0
+
+  table, th, td
+    border: 1px solid $secondary-color
+    border-collapse: collapse
+    
+
+    th, td
+      padding: 5px 15px
+      min-width: 80px
+
+    td
+      font-size: $fs-3
+      padding: $marg-base 0
+
+  .project
+    color: $primary-color
+
+  .accent
+    color: $accent-color
+
+    & a
+      color: $accent-color
+      transition: all 0.3s ease
+
+      &:hover
+        color: $secondary-color
+
+  .shine
+    color: $primary-color
+    letter-spacing: 2px
+
+
+
+
+
