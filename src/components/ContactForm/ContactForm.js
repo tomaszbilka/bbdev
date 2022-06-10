@@ -10,7 +10,7 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: () => {
       formik.resetForm();
     },
   });
