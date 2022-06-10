@@ -258,7 +258,7 @@ export const GET_PL_OFFER = `query MyQuery {
 }`;
 
 export const GET_ENG_OFFER = `query MyQuery {
-  allOfferEngs(orderBy: price_ASC) {
+  allOfferEngs(orderBy: currency_DESC) {
     id
     isfeatured
     price

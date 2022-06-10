@@ -11,9 +11,7 @@ const ContactForm = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
       formik.resetForm();
-      //send form somewhere
     },
   });
 
@@ -27,7 +25,7 @@ const ContactForm = () => {
         <p className="contact__mail">bbdevpl@gmail.com</p>
         <p className="contact__text">or send message by form below</p>
       </div>
-      <form className="form" onSubmit={formik.handleSubmit}>
+      <form className="form" onSubmit={formik.handleSubmit} data-netlify="true">
         <div className="form__field">
           <label className="form__label" htmlFor="name">
             Name
