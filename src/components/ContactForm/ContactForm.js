@@ -1,9 +1,14 @@
 import validationSchema from 'utils/yup-schema';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
-  const navigate = useNavigate();
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -13,9 +18,15 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: () => {
+    onSubmit: (value) => {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...value }),
+      })
+        .then(() => alert('Success!'))
+        .catch((error) => alert(error));
       formik.resetForm();
-      navigate('/');
     },
   });
 
