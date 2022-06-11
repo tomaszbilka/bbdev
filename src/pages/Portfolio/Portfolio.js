@@ -21,8 +21,8 @@ const FilteredPortfolio = () => {
 
   const { loading, error, data } = useQuery(query);
 
-  if (!loading) {
-    sortedPortfolios = data.allPortfolios;
+  if (!loading && !error) {
+    sortedPortfolios = data?.allPortfolios;
   }
 
   return (

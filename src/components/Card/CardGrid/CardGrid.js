@@ -2,6 +2,7 @@ import Loader from 'components/UI/Loader';
 import PropTypes from 'prop-types';
 import CardItemPortfolio from 'components/Card/CardItemPortfolio';
 import CardItemPost from 'components/Card/CardItemPost';
+import Error from 'components/UI/Error';
 
 const CardGrid = ({ data, isLoading, error, type }) => {
   let itemsToRender =
@@ -12,9 +13,9 @@ const CardGrid = ({ data, isLoading, error, type }) => {
   return (
     <ul className="card-grid">
       {isLoading && !error && <Loader />}
-      {!isLoading &&
-        error &&
-        error.graphQLErrors.map((el, index) => <p key={index}>{el.message}</p>)}
+      {!isLoading && error && (
+        <Error>We could not fetch data from server!</Error>
+      )}
       {!isLoading && !error && itemsToRender}
     </ul>
   );

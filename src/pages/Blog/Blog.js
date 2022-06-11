@@ -29,8 +29,8 @@ const Blog = () => {
 
   const { loading, error, data } = useQuery(query);
 
-  if (!loading) {
-    sortedPosts = sortPostsByDate(data.allPosts);
+  if (!loading && !error) {
+    sortedPosts = sortPostsByDate(data?.allPosts);
   }
 
   return (

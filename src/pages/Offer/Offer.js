@@ -4,6 +4,7 @@ import { GET_ENG_OFFER, GET_PL_OFFER } from 'utils/datocms';
 import { useQuery } from 'graphql-hooks';
 import OfferGrid from '../../components/Offer/OfferGrid';
 import Loader from '../../components/UI/Loader';
+import Error from 'components/UI/Error';
 
 let selectedData = [];
 
@@ -22,7 +23,7 @@ const Offer = () => {
 
   const { loading, error, data } = useQuery(query);
 
-  if (!loading) {
+  if (!loading && !error) {
     selectedData =
       selectedLanguage === 'PL'
         ? [data.allOfferPls, data.offerMoreInfoPl]
@@ -34,9 +35,7 @@ const Offer = () => {
       <Language onClick={changeLanguageHandler} />
       {loading && !error && <Loader />}
       {!loading && !error && <OfferGrid items={selectedData} />}
-      {!loading &&
-        error &&
-        error.graphQLErrors.map((el, index) => <p key={index}>{el.message}</p>)}
+      {!loading && error && <Error>We could not fetch data from server!</Error>}
     </>
   );
 };
