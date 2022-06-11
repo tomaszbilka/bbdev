@@ -7,6 +7,7 @@ import NotFound from 'pages/NotFound';
 import Offer from 'pages/Offer';
 import Post from 'pages/Post';
 import Portfolio from './pages/Portfolio';
+import Success from 'pages/Success';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/portfolio/:sort" element={<Portfolio />} />
         <Route path="/offer" element={<Offer />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>
