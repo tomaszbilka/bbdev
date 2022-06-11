@@ -1,7 +1,10 @@
 import validationSchema from 'utils/yup-schema';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -10,9 +13,9 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: () => {
       formik.resetForm();
-      console.log(values);
+      navigate('/');
     },
   });
 
@@ -33,7 +36,6 @@ const ContactForm = () => {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/pages/Success/"
       >
         <input type="hidden" name="form-name" value="contact" />
         <div className="form__field">
