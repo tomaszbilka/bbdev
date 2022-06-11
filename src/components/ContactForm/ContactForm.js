@@ -27,6 +27,7 @@ const ContactForm = () => {
         .then(() => alert('Success!'))
         .catch((error) => alert(error));
       formik.resetForm();
+      console.log(value);
     },
   });
 
