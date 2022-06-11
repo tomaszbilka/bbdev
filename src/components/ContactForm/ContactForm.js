@@ -2,6 +2,14 @@ import validationSchema from 'utils/yup-schema';
 import { useFormik } from 'formik';
 
 const ContactForm = () => {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  };
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -15,8 +23,8 @@ const ContactForm = () => {
       console.log(values);
       fetch('/', {
         method: 'POST',
-        body: JSON.stringify(values),
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...values }),
       })
         .then(() => alert('Success!'))
         .catch((error) => alert(error));
