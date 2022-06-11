@@ -10,9 +10,6 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: () => {
-      formik.resetForm();
-    },
   });
 
   return (
@@ -25,12 +22,7 @@ const ContactForm = () => {
         <p className="contact__mail">bbdevpl@gmail.com</p>
         <p className="contact__text">or send message by form below</p>
       </div>
-      <form
-        className="form"
-        onSubmit={formik.handleSubmit}
-        netlify
-        name="contact"
-      >
+      <form className="form" netlify name="contact">
         <div className="form__field">
           <label className="form__label" htmlFor="name">
             Name
