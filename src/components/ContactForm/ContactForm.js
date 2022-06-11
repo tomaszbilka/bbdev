@@ -10,8 +10,16 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: () => {
+    onSubmit: (values) => {
       formik.resetForm();
+      console.log(values);
+      fetch('/', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then(() => alert('Success!'))
+        .catch((error) => alert(error));
     },
   });
 
