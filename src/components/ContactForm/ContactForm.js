@@ -18,18 +18,21 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: (value) => {
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...value }),
-      })
-        .then(() => alert('Success!'))
-        .catch((error) => alert(error));
-      formik.resetForm();
-      console.log(value);
-    },
+    onSubmit: () => {},
   });
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formik.values }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+    formik.resetForm();
+    console.log(formik.values);
+  };
 
   return (
     <div className="contact-container">
@@ -43,7 +46,7 @@ const ContactForm = () => {
       </div>
       <form
         className="form"
-        onSubmit={formik.onSubmit}
+        onSubmit={submitHandler}
         name="contact"
         method="post"
         data-netlify="true"
