@@ -1,7 +1,11 @@
+import { useState, useEffect } from 'react';
 import validationSchema from 'utils/yup-schema';
 import { useFormik } from 'formik';
 
 const ContactForm = () => {
+  const [isNotificationVisible, setIsNotificationVisible] = useState(false);
+  const [formMessage, setFormMessage] = useState('');
+
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -9,6 +13,16 @@ const ContactForm = () => {
       )
       .join('&');
   };
+
+  useEffect(() => {
+    setIsNotificationVisible(true);
+    const timer = setTimeout(() => {
+      setIsNotificationVisible(false);
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [formMessage]);
 
   const formik = useFormik({
     initialValues: {
@@ -18,7 +32,6 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: () => {},
   });
 
   const submitHandler = (e) => {
@@ -28,11 +41,19 @@ const ContactForm = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...formik.values }),
     })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error));
+      .then(() => {
+        setFormMessage('Your message was sent!');
+      })
+      .catch(() => {
+        setFormMessage('There is some problem with server! Try again later!');
+      });
     formik.resetForm();
-    console.log(formik.values);
   };
+
+  const messageStyle =
+    formMessage === 'Your message was sent!'
+      ? 'notification'
+      : 'notification -error';
 
   return (
     <div className="contact-container">
@@ -125,6 +146,9 @@ const ContactForm = () => {
         <button className="form__button" type="submit">
           Send
         </button>
+        <div className={messageStyle}>
+          {isNotificationVisible && <p>{formMessage}</p>}
+        </div>
       </form>
     </div>
   );
