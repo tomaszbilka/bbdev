@@ -10,7 +10,7 @@ const OfferGrid = ({ items }) => {
   const [offerCards, offerInfo] = items;
 
   return (
-    <>
+    <section className="offer-container">
       <ul className="offer-grid">
         {offerCards?.map((el) => (
           <OfferItem item={el} key={el.id} />
@@ -37,7 +37,7 @@ const OfferGrid = ({ items }) => {
           }
         }}
       />
-    </>
+    </section>
   );
 };
 

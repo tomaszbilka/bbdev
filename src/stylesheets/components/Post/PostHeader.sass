@@ -7,6 +7,7 @@
   &__image
     flex: 2
     max-width: 500px
+    margin-right: $marg-base
 
   &__wrap
     @include flex($direction: column)
@@ -19,3 +20,10 @@
     color: $secondary-color
     font-style: italic
     margin-top: $marg-2
+
+@media (max-width: $s)
+  .post-header
+    @include flex($direction: column)
+
+    &__image
+      margin-bottom: $marg-base

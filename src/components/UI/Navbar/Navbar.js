@@ -1,5 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../../../images/logo/logo.svg';
+import MobileMenu from '../MobileMenu';
 
 const Navbar = () => {
   return (
@@ -49,6 +50,7 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
+      <MobileMenu />
     </nav>
   );
 };

@@ -1,0 +1,86 @@
+.mobile-menu
+  width: 35px
+  height: 25px
+  display: none
+  position: relative
+  z-index: 50
+
+  &__first,
+  &__second,
+  &__third,
+  &__fourth
+    width: 100%
+    height: 2px
+    background-color: $secondary-color
+    transition: all 0.4s ease
+
+  &__first
+    position: absolute
+    top: 0
+    left: 0
+  
+  &__second,
+  &__third
+    position: absolute
+    top: 12px
+    left: 0
+
+  &__fourth
+    position: absolute
+    bottom: 0
+    left: 0
+
+  &:hover
+    cursor: pointer
+
+  &:hover &__first
+    background-color: $primary-color
+
+  &:hover &__second
+    background-color: $primary-color
+
+  &:hover &__third
+    background-color: $primary-color
+
+  &:hover &__fourth
+    background-color: $primary-color
+
+  &.-open 
+    .mobile-menu__first,
+    .mobile-menu__fourth
+      display: none
+
+    .mobile-menu__second
+      transform: rotate(225deg)
+
+    .mobile-menu__third
+      transform: rotate(-45deg)
+
+
+.navMobile
+  position: absolute
+  background-color: $white-color
+  color: $secondary-color
+  width: 100%
+  top: -155px
+  left: 0
+  transition: all 0.3s linear
+
+  &__list
+    @include flex($direction: column)
+    grid-gap: $marg-base
+
+  &__link
+    font-size: $fm-4
+    &.-active
+      color: $primary-color
+
+  &.-open
+    top: 96px
+  
+    
+
+
+@media (max-width: $s)
+  .mobile-menu
+    display: block
