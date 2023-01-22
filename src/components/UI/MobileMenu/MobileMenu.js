@@ -39,17 +39,6 @@ const MobileMenu = () => {
           </li>
           <li>
             <NavLink
-              to="/offer"
-              className={(navData) =>
-                navData.isActive ? 'navMobile__link -active' : 'navMobile__link'
-              }
-              onClick={closeMobileMenuHandler}
-            >
-              OFFER
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/portfolio/all"
               className={(navData) =>
                 navData.isActive ? 'navMobile__link -active' : 'navMobile__link'
