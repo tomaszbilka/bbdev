@@ -1,4 +1,12 @@
-export const topics = ['featured', 'other', 'react', 'css', 'next', 'all'];
+export const topics = [
+  'featured',
+  'other',
+  'react',
+  'css',
+  'next',
+  'all',
+  'javascript',
+];
 
 export const sortPostsByDate = (posts) => {
   const sortedPosts = posts.sort((a, b) => {
