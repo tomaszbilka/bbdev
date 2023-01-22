@@ -21,7 +21,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/portfolio/all"
+            to="/portfolio"
             className={(navData) =>
               navData.isActive ? 'nav__link -active' : 'nav__link'
             }

@@ -8,7 +8,7 @@ const Footer = () => {
           <Link to="/blog">Blog</Link>
         </li>
         <li className="footer__link">
-          <Link to="/portfolio/all">Portfolio</Link>
+          <Link to="/portfolio">Portfolio</Link>
         </li>
         <li className="footer__link">
           <Link to="/contact">Contact</Link>

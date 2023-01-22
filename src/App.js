@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog/:sort" element={<Blog />} />
         <Route path="/blog/posts/:slug" element={<Post />} />
-        <Route path="/portfolio/:sort" element={<Portfolio />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/success" element={<Success />} />
         <Route path="/*" element={<NotFound />} />
