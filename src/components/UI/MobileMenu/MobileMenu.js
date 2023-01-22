@@ -39,7 +39,7 @@ const MobileMenu = () => {
           </li>
           <li>
             <NavLink
-              to="/portfolio/all"
+              to="/portfolio"
               className={(navData) =>
                 navData.isActive ? 'navMobile__link -active' : 'navMobile__link'
               }
